@@ -333,6 +333,7 @@ class Conversation {
       final result = await TwilioConversations()
           .conversationApi
           .sendMessage(sid, optionsData);
+
       return Message.fromMap(Map<String, dynamic>.from(result.encode() as Map));
     } on PlatformException catch (err) {
       throw TwilioConversations.convertException(err);
